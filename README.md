@@ -213,6 +213,11 @@ host    all             all             ::1/128                 md5
     * Run `sudo a2dissite 000-default.conf`
     * Restart apache `service apache2 reload`
 
+    ##### Disable login as root remotely #####
+    * Run `sudo nano /etc/ssh/sshd_config`
+    * Update line from `PermitRootLogin prohibit-password` to `PermitRootLogin no`
+    * Reboot the instance `sudo reboot`
+
 
 # Sources
 * DigitalOcean Tutorial - [UFW Essentials: Common Firewall Rules and Commands](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands)
@@ -227,3 +232,4 @@ host    all             all             ::1/128                 md5
 * libq-dev [Documentation](https://pypi.org/project/libpq-dev/)
 * Psycopg [Documentation](http://initd.org/psycopg/docs/)
 * Passlib [Documentation](https://passlib.readthedocs.io/en/stable/)
+* Ubuntu manual [/etc/ssh/sshd_config](http://manpages.ubuntu.com/manpages/xenial/en/man5/sshd_config.5.html)
